@@ -1,0 +1,29 @@
+<table class="table table-striped">
+
+  <thead>
+<tr>
+  <th>Company</th>
+  <th>Symbol</th>
+  <th>Last Trade Price</th>
+  <th>Shares Owned</th>
+  <th>Market Value</th>
+  <th>Action</th>
+
+</tr>
+
+  </thead>
+  <tr *ngFor="let data of portfolioData;let i = index">
+
+    <td>{{data.companyName}}</td>
+
+    <td>{{data.symbol}}</td>
+    <td>{{data.lastPrice | currency:'USD':true}}</td>
+
+    <td>{{data.numberOfSharesOwned}}</td>
+    <td>{{data.marketValue | currency:'USD':true }}</td>
+    <td><button class="btn btn-primary" (click)="deleteRecord(data.id, i)">Remove From Portfolio</button></td>
+
+
+  </tr>
+
+</table>
